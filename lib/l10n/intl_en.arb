@@ -1,0 +1,15 @@
+{
+  "@@locale": "en",
+  "lang": "en",
+  "settings" : "Settings",
+  "dark_mode": "Dark Mode",
+  "more": "More",
+  "home": "Home",
+  "arabic_language": "Arabic Language",
+  "top_likes": "Top Likes",
+  "sample_text": "Sample Text",
+  "play_this": "Play this",
+  "listen_audios": "Listen Audios",
+  "this_is_app": "This is App",
+  "error": "The internet connection doesn't work"
+}

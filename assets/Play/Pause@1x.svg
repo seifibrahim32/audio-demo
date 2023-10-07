@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Pause@1x</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pause" fill="#4F008C">
+            <path d="M12,0 C5.38405133,0 0,5.38295142 0,12 C0,18.6170486 5.38405133,24 12,24 C18.6170486,24 24,18.6170486 24,12 C24,5.38295142 18.6170486,0 12,0 Z M12,22.4128323 C6.25847846,22.4128323 1.58716774,17.7415215 1.58716774,12 C1.58716774,6.25847846 6.25847846,1.58716774 12,1.58716774 C17.7415215,1.58716774 22.4139322,6.25847846 22.4139322,12 C22.4139322,17.7415215 17.7426214,22.4128323 12,22.4128323 Z" id="Shape"></path>
+            <rect id="Rectangle" x="9" y="8.5" width="2" height="7"></rect>
+            <rect id="Rectangle-Copy-5" x="13" y="8.5" width="2" height="7"></rect>
+        </g>
+    </g>
+</svg>

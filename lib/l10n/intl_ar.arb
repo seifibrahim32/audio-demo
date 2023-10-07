@@ -1,0 +1,15 @@
+{
+  "@@locale": "ar",
+  "lang": "ar",
+  "settings" : "الاعدادات",
+  "dark_mode": "الوضع الليلي",
+  "more": "المزيد",
+  "home": "الرئيسية",
+  "arabic_language": "اللغة العربية",
+  "top_likes": "الأكتر اعجابا",
+  "sample_text": "مثال",
+  "play_this": "قم بالتشغيل",
+  "listen_audios": "استمع",
+  "this_is_app": "إنه تطبيق",
+  "error": "لا يوجد شبكة, حاول الاتصال مجددا"
+}

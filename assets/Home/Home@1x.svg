@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="22.6293809px" viewBox="0 0 24 22.6293809" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Home@1x</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-107, -686.3706)" stroke-width="2">
+            <g id="Group-2" transform="translate(0, 670)">
+                <g id="Group-4" transform="translate(107, 17)">
+                    <g id="Home" transform="translate(1, 0)">
+                        <path d="M20,21 L0,21 L0,21 L0,8.09789178 C1.41177403e-15,7.41409105 0.349352675,6.77768466 0.926249016,6.41056881 L9.92624902,0.683296081 C10.5813818,0.266393382 11.4186182,0.266393382 12.073751,0.683296081 L21.073751,6.41056881 C21.6506473,6.77768466 22,7.41409105 22,8.09789178 L22,19 C22,20.1045695 21.1045695,21 20,21 Z" id="Path" stroke="#4F008C" fill="#4F008C"></path>
+                        <rect id="Rectangle" stroke="#FFFFFF" fill="#FFFFFF" x="9" y="14" width="4" height="7" rx="1"></rect>
+                        <line x1="6.5" y1="21" x2="18" y2="21" id="Line" stroke="#4F008C" stroke-linecap="square"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
