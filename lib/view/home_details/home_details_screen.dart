@@ -152,10 +152,22 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                                     if (!state.isConnected) {
                                       showAlertDialog(
                                           S.of(context).error, context);
+                                      if (state is AudioIsPlayingState) {
+                                        bloc.disableAudio(
+                                            bloc.endpoints[index]);
+                                      }
+                                      if (bloc.currentPlayingIndex ==
+                                          index ) {
+                                        bloc.disableAudio(
+                                            bloc.endpoints[index]);
+                                      }
+                                      else {
+                                        bloc.startAudio(bloc.endpoints[index]);
+                                      }
                                     } else if (state is AudioIsPlayingState ||
                                         bloc.currentPlayingIndex != index) {
                                       bloc.disableAudio(index);
-                                      if (bloc.currentPlayingIndex != index) {
+                                      if (state is AudioPausedState && bloc.currentPlayingIndex != index) {
                                         bloc.startAudio(bloc.endpoints[index]);
                                       }
                                     } else if (state is AudioPausedState) {
