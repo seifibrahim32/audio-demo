@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
@@ -24,18 +23,21 @@ class NetworkRepository {
     });
 
     if (audioURL != null) {
-      // Uint8List bytes = await InternetFile.get(
-      //   audioURL!,
-      //   process: (percentage) {
-      //     if (kDebugMode) {
-      //       print('downloadPercentage: $percentage');
-      //     }
-      //   },
-      // );
-      // File file = File('assets/${endpoint.toString()}.mp3');
-      // print("temp path : ${file.path}");
-      // await file.writeAsBytes(bytes);
-      // print("written");
+      Uint8List bytes = await InternetFile.get(
+        audioURL!,
+        progress: (progress, finishingPercent) {
+          if (kDebugMode) {
+            print('downloadPercentage: $progress/$finishingPercent');
+          }
+        },
+      );
+      await getTemporaryDirectory().then((value) async {
+        File file = File('${value.path.trim()}/$endpoint.mp3');
+        debugPrint("temp path : ${file.path}");
+        await file
+            .writeAsBytes(bytes)
+            .whenComplete(() => debugPrint("written file path : ${file.path}"));
+      });
       return Left(
         audioURL,
       );
