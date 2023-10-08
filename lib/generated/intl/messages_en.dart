@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "error": MessageLookupByLibrary.simpleMessage(
             "The internet connection doesn\'t work"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "internet_status":
+            MessageLookupByLibrary.simpleMessage("Internet is connected"),
         "lang": MessageLookupByLibrary.simpleMessage("en"),
         "listen_audios": MessageLookupByLibrary.simpleMessage("Listen Audios"),
         "more": MessageLookupByLibrary.simpleMessage("More"),

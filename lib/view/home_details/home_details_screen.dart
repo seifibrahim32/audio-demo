@@ -5,6 +5,7 @@ import 'package:itargs_task/core/static/styles.dart';
 import 'package:itargs_task/generated/l10n.dart';
 import 'package:itargs_task/models/provider_models/states/audio_states.dart';
 import 'package:itargs_task/models/provider_models/states/favorites_states.dart';
+import 'package:itargs_task/view/home_details/icon_widget.dart';
 import 'package:itargs_task/view/home_details/internet/progress_bar_view.dart';
 import 'package:itargs_task/view/snackbars/dialogs.dart';
 import 'package:itargs_task/view_model/di/di_utils.dart';
@@ -32,25 +33,6 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
               color: Colors.grey),
         ],
       );
-
-  getAudioIcon(AudioStates state,int index,AudioPlayerCubit bloc) {
-
-    bool isPlaying = bloc.indicies.contains(index);
-    if (state is AudioIsLoadingState && isPlaying) {
-      return const SizedBox(
-        width: 20,
-        height: 20,
-        child: CircularProgressIndicator(
-          color: Colors.purple,
-        ),
-      );
-    }
-    if (state is AudioIsPlayingState && isPlaying) {
-      return Image.asset('assets/Play/Pause.png');
-    } else {
-      return Image.asset('assets/Play/icPlay Copy.png');
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -156,6 +138,10 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                       child: BlocBuilder<AudioPlayerCubit, AudioStates>(
                           builder: (context, state) {
                         var bloc = BlocProvider.of<AudioPlayerCubit>(context);
+                        List<Widget> iconsList = List.generate(
+                          bloc.endpoints.length,
+                          (index) => IconWidget(index),
+                        );
                         return ListView.separated(
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
@@ -166,17 +152,19 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                                     if (!state.isConnected) {
                                       showAlertDialog(
                                           S.of(context).error, context);
-                                    }
-                                    else if (state is AudioIsPlayingState) {
+                                    } else if (state is AudioIsPlayingState ||
+                                        bloc.currentPlayingIndex != index) {
                                       bloc.disableAudio(index);
+                                      if (bloc.currentPlayingIndex != index) {
+                                        bloc.startAudio(bloc.endpoints[index]);
+                                      }
                                     } else if (state is AudioPausedState) {
                                       bloc.resumeAudio(index);
                                     } else {
                                       bloc.startAudio(bloc.endpoints[index]);
                                     }
                                   },
-                                  child: getAudioIcon(state,index,bloc)
-                              ),
+                                  child: iconsList[index]),
                               title: Text(S.of(context).play_this,
                                   style: isDark ? kDarkListStyle : kListStyle),
                             );

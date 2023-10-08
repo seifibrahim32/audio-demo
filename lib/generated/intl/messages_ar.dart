@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "error": MessageLookupByLibrary.simpleMessage(
             "لا يوجد شبكة, حاول الاتصال مجددا"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "internet_status": MessageLookupByLibrary.simpleMessage("الشبكة متصلة"),
         "lang": MessageLookupByLibrary.simpleMessage("ar"),
         "listen_audios": MessageLookupByLibrary.simpleMessage("استمع"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),

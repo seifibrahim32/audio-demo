@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:itargs_task/core/static/styles.dart';
 import 'package:itargs_task/models/provider_models/states/audio_states.dart';
+import 'package:itargs_task/generated/l10n.dart';
 
 class ProgressBarHome extends StatelessWidget {
-
   final AudioStates internetState;
-  const ProgressBarHome(this.internetState,{super.key});
+
+  const ProgressBarHome(this.internetState, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: internetState.isConnected? true : false,
+      visible: internetState.isConnected ? true : false,
       replacement: const LinearProgressIndicator(
         color: Colors.red,
         backgroundColor: Colors.blue,
@@ -22,14 +23,12 @@ class ProgressBarHome extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: 26,
           color: Colors.green[400],
-          child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Internet is connected",
-                  style: kNotConnected,
-                )
-              ]),
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Text(
+              S.of(context).internet_status,
+              style: kNotConnected,
+            )
+          ]),
         ),
       ),
     );
