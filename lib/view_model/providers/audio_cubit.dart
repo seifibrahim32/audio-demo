@@ -14,8 +14,7 @@ class AudioPlayerCubit extends Cubit<AudioStates> {
 
   List<int> endpoints = [1, 2];
 
-  List<int> indicies = [];
-  int currentIndex = 0;
+  int currentPlayingIndex = -1;
 
   AudioPlayerCubit(super.initialState) {
     checkInternet();
@@ -40,7 +39,7 @@ class AudioPlayerCubit extends Cubit<AudioStates> {
   }
 
   startAudio(int index) async {
-    indicies.add(index-1);
+    currentPlayingIndex = index - 1;
     emit(AudioIsLoadingState(isConnected: state.isConnected));
     if (state.isConnected) {
       getAudioFromApi(index);

@@ -11,5 +11,6 @@
   "play_this": "Play this",
   "listen_audios": "Listen Audios",
   "this_is_app": "This is App",
-  "error": "The internet connection doesn't work"
+  "error": "The internet connection doesn't work",
+  "internet_status":  "Internet is connected"
 }

@@ -25,18 +25,18 @@ class NetworkRepository {
     });
 
     if (audioURL != null) {
-      Uint8List bytes = await InternetFile.get(
-        audioURL!,
-        process: (percentage) {
-          if (kDebugMode) {
-            print('downloadPercentage: $percentage');
-          }
-        },
-      );
-      File file = File('assets/${endpoint.toString()}.mp3');
-      print("temp path : ${file.path}");
-      await file.writeAsBytes(bytes);
-      print("written");
+      // Uint8List bytes = await InternetFile.get(
+      //   audioURL!,
+      //   process: (percentage) {
+      //     if (kDebugMode) {
+      //       print('downloadPercentage: $percentage');
+      //     }
+      //   },
+      // );
+      // File file = File('assets/${endpoint.toString()}.mp3');
+      // print("temp path : ${file.path}");
+      // await file.writeAsBytes(bytes);
+      // print("written");
       return Left(
         audioURL,
       );

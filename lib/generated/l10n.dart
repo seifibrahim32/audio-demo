@@ -169,6 +169,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Internet is connected`
+  String get internet_status {
+    return Intl.message(
+      'Internet is connected',
+      name: 'internet_status',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
