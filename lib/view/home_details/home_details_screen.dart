@@ -155,7 +155,7 @@ class _HomeDetailsScreenState extends State<HomeDetailsScreen> {
                                     } else if (state is AudioIsPlayingState ||
                                         bloc.currentPlayingIndex != index) {
                                       bloc.disableAudio(index);
-                                      if(bloc.currentPlayingIndex != index){
+                                      if (bloc.currentPlayingIndex != index) {
                                         bloc.startAudio(bloc.endpoints[index]);
                                       }
                                     } else if (state is AudioPausedState) {

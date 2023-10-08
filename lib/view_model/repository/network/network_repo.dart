@@ -20,8 +20,7 @@ class NetworkRepository {
     await networkModel.fetchData("$url${endpoint.toString()}").then((value) {
       value.fold((url) {
         audioURL = url!;
-      }, (r) {
-      });
+      }, (r) {});
     });
 
     if (audioURL != null) {
